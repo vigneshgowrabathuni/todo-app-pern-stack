@@ -49,7 +49,7 @@ app.put("/todos/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const { description } = req.body;
-    await db.query("UODATE todo SET description = $1 WHERE todo_id = $2", [
+    await db.query("UPDATE todo SET description = $1 WHERE todo_id = $2", [
       description,
       id,
     ]);
